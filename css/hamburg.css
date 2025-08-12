@@ -1,0 +1,48 @@
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: 1em;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+/* Responsive Styles for Hamburger Menu */
+@media (max-width: 768px) {
+
+    .bg-img{
+        height: 85vh;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        display: none;
+        width: 100%;
+        text-align: center;
+        border-radius: 5px;
+        border: solid .5px wheat;
+    }
+
+    nav ul.show {
+        display: flex;
+        background-color: rgb(113, 113, 113);
+        padding: 5px 0px 5px 0px;
+    }
+    
+    nav li{
+        background-color: rgb(144, 158, 144);
+        border-radius: 6px;
+        padding: 0px 5px 0px 5px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
