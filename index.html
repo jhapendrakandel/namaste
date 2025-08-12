@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./img/logo.png">
+    <title>NAMASTE - インドレストラン</title>
+   <link rel="stylesheet" href="css/index.css">
+   <script defer src="js/jp.index.js"></script>
+<!-- Drinks styles inserted -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <header>
+        <img src="img/logo.png" alt="会社ロゴ" class="logo">
+        <nav>
+            <div class="hamburger" id="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+            <ul id="nav-list">
+                <li><a href="#home">ホーム</a></li>
+                <li><a href="#about_us">私たちについて</a></li>
+                <li><a href="#menu">メニュー</a></li>
+                <li><a href="#Online_order">オンライン注文</a></li>
+                <li><a href="#Store_location">店舗情報</a></li>
+            </ul>
+
+            <a href="english.page.html" class="language-button">English</a>
+
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <img class="bg-img" src="img/background.jpg">
+        <section id="home">
+            <h2>NAMASTEへようこそ</h2>
+            <p>広島でカレーを食べるなら、ナマステへ！本格的なインド・ネパール料理店で、新年会や宴会、大人数のグループでもお楽しみいただけます。お得な食べ飲み放題コースもご用意しております！</p>
+        </section>
+    </div>
+
+    <section id="menu">
+        <h2>メニュー</h2>
+        <div class="menu-categories">
+            <button onclick="showCategory('lunch')" class="active">ランチ</button>
+            <button onclick="showCategory('special')">スペシャルディッシュ</button>
+            <button onclick="showCategory('dessert')">デザート</button>
+            <button onclick="showDrinksCategory()">ドリンク</button>
+            <button onclick="showCategory('ala-carte')">アラカルト</button>
+            <button onclick="showCategory('curry')">カレー</button>
+        </div>
+
+        <div id="drinks-items" style="display:none;">
+            <div class="filter-container">
+                <button class="filter-btn active" data-cat="all">
+                    <i class="fas fa-star category-icon"></i>すべて
+                </button>
+                <button class="filter-btn" data-cat="beer">
+                    <i class="fas fa-beer category-icon"></i>ビール
+                </button>
+                <button class="filter-btn" data-cat="whiskey">
+                    <i class="fas fa-whiskey-glass category-icon"></i>ウィスキー
+                </button>
+                <button class="filter-btn" data-cat="cocktail">
+                    <i class="fas fa-cocktail category-icon"></i>カクテル
+                </button>
+                <button class="filter-btn" data-cat="wine">
+                    <i class="fas fa-wine-bottle category-icon"></i>ワイン
+                </button>
+                <button class="filter-btn" data-cat="plum">
+                    <i class="fas fa-wine-glass category-icon"></i>梅酒
+                </button>
+                <button class="filter-btn" data-cat="soft">
+                    <i class="fas fa-glass-water category-icon"></i>ソフトドリンク
+                </button>
+            </div>
+
+            <div class="menu-grid" id="drinksContainer">
+                <!-- Drink cards will be inserted here by JavaScript -->
+            </div>
+
+            <footer>
+                <div class="footer-content">
+                    <h3>Visit Us Today!</h3>
+                    <p>Open daily from 5:00 PM to 11:00 PM | Happy Hour: 5-7 PM (20% off all drinks)</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                    <p>123 Gourmet Street, Tokyo | Phone: (03) 1234-5678 | Email: info@restaurant.com</p>
+                    <p>All prices include tax. Service charge may apply for large groups.</p>
+                </div>
+            </footer>
+        </div>
+
+        <div id="menu-items">
+            <!-- メニューアイテムはここに表示されます -->
+        </div>
+    </section>
+
+    <hr style="border: 0; height: 3px; background: linear-gradient(90deg, rgba(255,0,0,0), #c0392b, rgba(255,0,0,0)); margin: 40px 0; border-radius: 3px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+
+
+    <!-- 経験セクション -->
+    <div id="about_us">
+        <section id="about-experience">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>経験</h2>
+                    <p>私は広島で15年間インド・ネパール料理に携わり、ここでしか味わえないインド・ネパール料理を追求し、現在2店舗を運営しています。COVID-19パンデミックの影響で、過去数年間は皆さんにとって非常に困難だったと思います。私たちのレストランではアーユルヴェーダ料理に重点を置いており、疲れた体を癒し、自己治癒力を養うことを願っています。事前にご連絡いただければ、ハラールやベジタリアンのお客様にも対応いたしますので、お気軽にお問い合わせください。
+                    </p>
+                </div>
+                <img src="img/Ecperence.jpg" alt="経験の画像" class="about-image left">
+            </div>
+        </section>
+
+        <!-- アーユルヴェーダセクション -->
+        <section id="about-ayurveda">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>アーユルヴェーダに挑戦</h2>
+                    <p>インド発祥のアーユルヴェーダは、体の本来持つ治癒力を重視し、食事を通じてバランスを取り戻すことに重点を置いています。ナマステでは、インド・ネパール料理店として、十数種類のスパイスと多種多様な野菜を使用した料理を提供し、お客様の健康に貢献することを目指しています。私たちのメニューには、卵、乳製品、小麦、大豆、サラダ油、カシューナッツ、ココナッツ、トマトなどの原材料や調味料が含まれているため、アレルギーをお持ちの方はご注意ください。メニューについてご質問がある場合は、スタッフにお尋ねください。
+                    </p>
+                </div>
+                <img src="img/Aayurveda.jpg" alt="アーユルヴェーダの画像" class="about-image right">
+            </div>
+        </section>
+
+    </div>
+
+    <!-- 店舗移転のお知らせ -->
+    <section id="store-relocation">
+        <h2>店舗移転のお知らせ</h2>
+        <p>新しい改善された場所に移転することをお知らせいたします！新しい住所は[新しい住所]になります。新しいスペースで皆様にお会いできることを楽しみにしております。</p>
+        <img src="img/NEW_store_1.jpeg" alt="新しいビル" class="relocation-image">
+    </section>
+
+    <!-- スタッフ募集セクション -->
+    <section id="staff-recruitment">
+        <h2>チームに参加しませんか！</h2>
+        <p>インド・ネパール料理に情熱を持ち、ダイナミックなチームの一員になりたい方を募集しています。興味のある方は、履歴書とともに経験と私たちのチームに適している理由を簡単に記載したカバーレターを[メールアドレス]までお送りください。
+        </p>
+
+        <hr style="border: 0; height: 3px; background: linear-gradient(90deg, rgba(255,0,0,0), #c0392b, rgba(255,0,0,0)); margin: 40px 0; border-radius: 3px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+
+
+        <!-- 予約詳細行 -->
+        <div class="recruitment-row">
+            <div class="recruitment-detail">
+                <h3>ダンバラ予約</h3>
+                <p>ご予約は[電話番号]までお電話いただくか、当社のウェブサイトをご覧ください。</p>
+                <a href="tel:0822620004" class="call-button">お電話</a>
+            </div>
+            <div class="recruitment-detail">
+                <h3>八丁堀予約</h3>
+                <p>ご予約は[電話番号]までお電話いただくか、当社のウェブサイトをご覧ください。</p>
+                <a href="tel:0822223240" class="call-button">お電話</a>
+            </div>
+        </div>
+
+
+        <hr style="border: 0; height: 3px; background: linear-gradient(90deg, rgba(255,0,0,0), #c0392b, rgba(255,0,0,0)); margin: 40px 0; border-radius: 3px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+
+
+        <!-- オンライン注文行 -->
+        <div id="Online_order">
+            <div class="recruitment-row">
+                <div class="online-order">
+                    <img src="img/ubber_eats.png" alt="Uber Eats">
+                    <p>Uber Eatsで注文</p>
+                </div>
+                <div class="online-order">
+                    <img src="img/wolt.png" alt="配達サービス">
+                    <p>配達サービスで注文</p>
+                </div>
+                <div class="online-order">
+                    <img src="img/take_away.png" alt="テイクアウト">
+                    <p>テイクアウトで注文</p>
+                </div>
+            </div>
+        </div>
+
+        <hr style="border: 0; height: 3px; background: linear-gradient(90deg, rgba(255,0,0,0), #c0392b, rgba(255,0,0,0)); margin: 40px 0; border-radius: 3px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+
+
+        <!-- 店舗テイクアウト行 -->
+        <div class="recruitment-row">
+            <div class="store-takeout">
+                <h3>店舗受け取り</h3>
+                <p>直接店舗で注文を受け取ることができます。</p>
+            </div>
+            <div class="store-takeout">
+                <h3>配達サービス</h3>
+                <p>ご自宅に配達サービスを提供しています。</p>
+            </div>
+        </div>
+
+        <hr style="border: 0; height: 3px; background: linear-gradient(90deg, rgba(255,0,0,0), #c0392b, rgba(255,0,0,0)); margin: 40px 0; border-radius: 3px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+
+
+        <!-- オンライン決済オプション行 -->
+        <div class="recruitment-row">
+            <div class="payment-option">
+                <img src="img/paypay.png" alt="PayPay">
+                <p>PayPay</p>
+            </div>
+            <div class="payment-option">
+                <img src="img/cash_pay.jpg" alt="現金支払い">
+                <p>現金支払い</p>
+            </div>
+            <div class="payment-option">
+                <img src="img/paypay.png" alt="PayPay">
+                <p>PayPay</p>
+            </div>
+            <div class="payment-option">
+                <img src="img/cash_pay.jpg" alt="現金支払い">
+                <p>現金支払い</p>
+            </div>
+            <div class="payment-option">
+                <img src="img/paypay.png" alt="PayPay">
+                <p>PayPay</p>
+            </div>
+        </div>
+
+        <hr style="border: 0; height: 3px; background: linear-gradient(90deg, rgba(255,0,0,0), #c0392b, rgba(255,0,0,0)); margin: 40px 0; border-radius: 3px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+
+
+    </section>
+    <!-- ページトップボタン -->
+    <button id="page-top" title="トップへ戻る">↑</button>
+
+    <footer>
+        <div id="Store_location">
+            <div class="footer-container">
+                <!-- 店舗1セクション -->
+                <div class="store-section">
+                    <div class="store-info">
+                        <h3>店舗1</h3>
+                        <p>広島市南区段原南2丁目8-11。</p>
+                        <h3>営業時間</h3>
+                        <p>ランチ：11:00-15:00 (ラストオーダー：14:00)<br>ディナー：17:00-22:00 (ラストオーダー：21:00)</p>
+                        <h3>アクセス</h3>
+                        <p>[[バス]広島電鉄[331]広島駅[南口]段原中央（バス停）<br>広島電鉄[322]県立病院（広島県）段原中央（バス停）<br><br>[電車]広島電鉄5号線広島港662m比治山下駅から。
+                        </p>
+                        <h3>定休日</h3>
+                        <p>定休日：なし</p>
+                    </div>
+                    <div class="store-map">
+                        <h3>店舗1の場所</h3>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13170.638243427513!2d132.4585525871582!3d34.38457799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x355aa1fa2b9f9dbb%3A0xc8619b142b83a390!2sNamaste%20Indian%20Restaurant!5e0!3m2!1sen!2snp!4v1722156039925!5m2!1sen!2snp"
+                            width="60%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <!--- 投稿切手 -->
+                <div>
+                    <div class="store-images">
+                        <img src="img/store_damnbara.jpg" alt="段原店" class="store-image">
+                        <img src="img/New_location.jpg" alt="八丁堀店" class="store-image">
+                    </div>
+                </div>
+
+                <!-- 店舗2セクション -->
+                <div class="store-section">
+                    <div class="store-info">
+                        <h3>店舗2</h3>
+                        <p>広島市中区八丁堀11-13八丁堀アロービル3階。</p>
+                        <h3>営業時間</h3>
+                        <p>ランチ：11:00-15:00 (ラストオーダー：14:00)<br>ディナー：17:00-22:00 (ラストオーダー：21:00)</p>
+                        <h3>アクセス</h3>
+                        <p>[電車]八丁堀駅または立町駅から徒歩2分立町駅から117m。</p>
+                        <h3>定休日</h3>
+                        <p>定休日：なし</p>
+                    </div>
+                    <div class="store-map">
+                        <h3>店舗2の場所</h3>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13169.012060725228!2d132.4432983!3d34.3949144!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x355aa1fa2b753d3b%3A0x86414e2672b36241!2sNamaste!5e0!3m2!1sen!2snp!4v1722155932409!5m2!1sen!2snp"
+                            width="60%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
